@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+
+
+
+<div class="light-wrapper">
+<div class="otstup">
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-8 col-sm-8">
+	    <h3 style="text-align: center; font-size: 16pt;
+	    padding-bottom: 15px;">СВЯЖИТЕСЬ С НАМИ ЧЕРЕЗ ФОРМУ ОБРАТНОЙ СВЯЗИ</h3>
+		<p class="p18" style="text-align: center; padding-bottom: 11px;">Задайте свои вопросы нам и не забудьте указать свои контактные данные</p>
+		<h4>{% if all_is_right %}{{ all_is_right }}{% endif %}</h4>
+		<form action="{% url 'contact' %}" method="post">
+		{% csrf_token %}
+		{{ form }} 
+		
+		<button class="btn btn-info btn-lg tex1 btn-block" input type="submit" style="margin-top: 10px;"> Отправить </button>
+		
+		</form>	
+	</div>
+	<div class="col-lg-4 col-sm-4">
+		<h3 style="text-align: center; font-size: 16pt; padding-bottom: 15px; padding-top: 15px;">КОНТАКТЫ</h3>
+		<p class="p18" style="text-align: center;">Большое спасибо, что проявили интерес к моим работам!</p>
+		<p class="p18" style="text-align: center; padding-bottom: 11px;">Чтобы заказать фотосессию или узнать о свободных датах, свяжитесь со мной по контактам, указанным ниже.</p>
+		<div class="icon"> 
+             <p class="p18"> <i class="glyphicon glyphicon-earphone" style="font-size:20px; margin-right: 10px; margin-left:30px; "></i> +7 906 417 90 32 </p>
+            <p class="p18"> <i class="glyphicon glyphicon-envelope" style="font-size:20px; margin-right: 10px; margin-left:30px;"></i>  2404822@rambler.ru </p>
+        </div> 
+       
+        <p class="p18" style="text-align: center;">Мои странички в соц.сетях:</p>
+        <div style="text-align: center;">
+          	<a class="btn btn-social-icon btn-xs btn-vk" href="http://vk.com/lerochka017"><span class="fa fa-vk"></span></a>
+  			<a class="btn btn-social-icon btn-xs btn-facebook"><span class="fa fa-facebook"></span></a>
+			<a class="btn btn-social-icon btn-xs btn-odnoklassniki"><span class="fa fa-odnoklassniki"></span></a>
+			<a class="btn btn-social-icon btn-xs btn-vimeo"><span class="fa fa-vimeo"></span></a>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

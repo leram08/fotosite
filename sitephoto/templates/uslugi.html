@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+
+
+<div class="head_post">		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+				<h2 style="text-align: center;">Услуги</h2>
+				<br/>
+				<p class="p18">Продолжительность свадебной фотосъёмки подбирается индивидуально для каждого клиента. Так же можно выбрать дополнительные услуги такие как: фотокнига (разных размеров),  минибук, печать фотографий А4, вебгалерея, дополнительные копии свадебного диска. Свадебная дата считается свободной до тех пор пока не внесена предоплата.
+	
+				Для вашего удобства, вы можете выбрать один из готовых пакетов услуг.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="light-wrapper">
+	<div style="padding-bottom: 250px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">		
+				<br>		
+				<h3 style="text-align: center; padding-bottom: 30px;">Выберите необходимую услугу:</h3>
+				<div class="btn-group btn-group-lg btn-group-justified" data-toggle="buttons">
+					<a class="btn btn-warning btn-photo" type="radio">Фотосъемка</a>
+					<a class="btn btn-warning btn-video" type="radio">Видеосъемка</a>
+				</div>
+
+				<div class="accordion accordion_photo">
+				{% for photo in photos_uslugi%}
+				 	<section class="accordion_item">
+                		<h3 class="title_block" align="center"> {{photo.title}} </h3>
+                		<div class="info">
+                    		<p class="info_item p18"> {{photo.description}} </p>
+                		</div>
+            		</section>
+            	{%endfor%}
+            	</div>
+
+
+            	<div class="accordion accordion_video">
+				{% for video in videos_uslugi %}
+				 	<section class="accordion_item">
+                		<h3 class="title_block" align="center"> {{video.title}} </h3>
+                		<div class="info">
+                    		<p class="info_item p18"> {{video.description}} </p>
+                		</div>
+            		</section>
+            	{%endfor%}
+            	</div>
+
+
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+
+   <script type="text/javascript">
+   	$('.btn-photo').click(function(){
+   		$('.btn-photo').addClass('btn-photo-active')
+   		$('.btn-video').removeClass('btn-photo-active')
+   		$('.accordion_photo').show();
+   		$('.accordion_video').hide();
+   });
+    $('.btn-video').click(function(){
+    	$('.btn-video').addClass('btn-photo-active')
+   		$('.btn-photo').removeClass('btn-photo-active')
+   		$('.accordion_video').show();
+   		$('.accordion_photo').hide();
+   });
+
+    ! function(i) {
+      var o, n;
+      i(".title_block").on("click", function() {
+        o = i(this).parents(".accordion_item"), n = o.find(".info"),
+          o.hasClass("active_block") ? (o.removeClass("active_block"),
+            n.slideUp()) : (o.addClass("active_block"), n.stop(!0, !0).slideDown(),
+            o.siblings(".active_block").removeClass("active_block").children(
+              ".info").stop(!0, !0).slideUp())
+      })
+    }(jQuery);
+   </script>
+{% endblock %}

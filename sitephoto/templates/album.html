@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+<div class="head_post" > 
+    <div class="container">
+      <div class="row">      
+        <div class="col-md-12 col-sm-12" id="portfolio_content" style="padding-right:0px;padding-left:0px;">
+			      <div class="row-flex">
+			      {% for album in albums %}
+              <div class="col-md-4 col-sm-6 col-xs-12" style="padding-left:0px; padding-right:0px;">
+                <div class="hover ehover13">		
+                    <a href='{{album.slug}}'>	
+					          <img class="img-responsive" src='{{album.img.url}}' >
+					          <div class="overlay">
+                    <h2>{{album.title}}</h2>
+                    <button class="info nullbutton" data-toggle="modal" data-target="#modal13">Просмотр</button>
+                    </div>
+					          </a>                    
+                  </div>                     
+                </div>      
+			      {% endfor %}
+			      </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+
+<div class="light-wrapper nullstyle " style="background: #f2f2f2; border-top: 1px solid rgba(0, 0, 0, 0.09)" >
+  <div class="container inner">
+    <div class="row">
+      <div id="aq-block-939-30" class="aq-block aq-block-aq_section_title_block col-sm-12 aq-first ">
+        <div class="swiper-wrapper flickr-wrapper"> 
+          <div class="swiper-container flickr">
+            <div class="swiper flickr-feed"> 
+              <div class="aq-block aq-block-aq_ebor_text_block col-sm-12">
+                  <h3 align="center"> Портфолио фотографа – отличная возможность ознакомиться с уровнем его профессионализма</h3>
+
+                  <p class="p18">Каждый профессиональный фотограф, ну или человек, стремящийся к этому почетному «званию» должен предоставить своим клиентам возможность детально ознакомиться со своими предыдущими работами, а также с такими их аспектами как качество,тематика, разнообразность, подбор ракурсов, подбор декораций, грима и так далее. Мы очень тщательно подходим к организации своего портфолио, чтобы представленные в нем фото максимально отображали индивидуальное видение фотографа своих кадров. 
+                  </p> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+

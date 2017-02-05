@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+
+<nav role="navigation" class="navbar navbar-default">
+	<div class="container">
+  <!-- Логотип и мобильное меню -->
+	<div class="navbar-header">
+	<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle collapsed" aria-expanded="false">
+	    <span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<a class="navbar-brand" href="/">
+<img src="{% static 'images/brand1.png' %}">
+</a>
+		
+	</div>
+  <!-- Навигационное меню -->
+    <div id="navbarCollapse" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+      <ul class="nav navbar-nav navbar-right">
+<li><a title="Главная" href="/">Главная</a></li>
+<li><a title="Портфолио" href="/galery">Портфолио</a></li>
+<li><a title="Услуги" href="#">Услуги</a></li>
+<li><a title="Блог" href="#">Блог</a></li>
+<li><a title="Видео" href="/video">Видео</a></li>
+<li><a title="Отзывы" href="#">Отзывы</a></li>
+<li><a title="Контакты" href="/contact">Контакты</a></li>
+
+    </ul>
+  
+    </div>
+	</div>
+</nav>
+
+
+{% endblock %}

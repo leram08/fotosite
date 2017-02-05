@@ -1,0 +1,17 @@
+{% load static %}
+
+{% for project_triplet in blogs %}
+<div class="head_post">
+<br/>
+	<div class="container">
+		<div class="row">
+    		{% for project in project_triplet %}
+    		<div class="col-lg-12">
+        		<h2>{{project.title}}</h2></a>
+        		<p>{{project.content | safe}}</p>
+    		</div>
+    		{% endfor %}
+		</div>
+	</div>
+</div>
+{% endfor %}

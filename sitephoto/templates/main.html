@@ -1,0 +1,349 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+
+
+<!-- Карусель -->
+<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+  <!-- Индикаторы для карусели -->
+  <ol class="carousel-indicators">
+  {% for sl in slid %}
+  {% if forloop.first %}
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  {%else%}
+    <li data-target="#myCarousel" data-slide-to={{sl.id|slice:"1:"}}></li>
+  {% endif %}
+  {% endfor %}
+  </ol>   
+  <!-- Слайды карусели -->
+  <div class="carousel-inner">
+  {% for sl in slid %}
+  {% if forloop.first %}
+    <div class="active item">
+      <img src='{{sl.image.url}}' style="object-fit: cover; height: 100%; width: 100%;">
+      <div class="carousel-caption">
+        <h2 >{{sl.title}}</h2>
+      </div>
+    </div>
+    {%else%}
+    <div class="item">
+      <img src='{{sl.image.url |slice:"1:"}}' style="object-fit: cover; height: 100%; width: 100%;">
+      <div class="carousel-caption">
+        <h2 class="carousel_h3">{{sl.title}}</h2>
+      </div>
+    </div>
+    {%endif%}
+    {%endfor%}
+    </div>
+
+
+  <!-- Навигация для карусели -->
+  <!-- Кнопка, осуществляющая переход на предыдущий слайд с помощью атрибута data-slide="prev" -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <!-- Кнопка, осуществляющая переход на следующий слайд с помощью атрибута data-slide="next" -->
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+
+
+
+<div class="light-wrapper">
+<div class="container inner">
+<div class="row">
+<div class="col-sm-12">
+<div class="text-center"><h1 style="font-family: Tahoma, Geneva, sans-serif;">Фотограф в Ростове-на-Дону</h1></div>
+<div class="text-center"><p>Фотограф премиум класса - европейский уровень качества. Индивидуальный подход и безупречный результат в любой точке мира - это основа моей работы.
+Буду рад передать Ваши живые эмоции на фотографию!</p>
+</div>
+</div>
+
+</div>
+</div>
+</div>	
+
+<div class="dark-wrapper">
+    <div class="container inner">
+        <div class="row">
+            <div class="col-sm-6">
+    <div class="section-title"><span class="fixh3_2">Обо мне</span></div><div class="row"><div class="col-sm-5">
+            <figure><img src="media/me1.jpg/" /></figure></div>
+        <div class="col-sm-7">
+            <div><span style="font-size:21px;"></span></div>
+<div><span style="font-family: Tahoma, Geneva, sans-serif;">&nbsp;</span></div>
+<div><span style="font-size: 24px; font-family: Tahoma, Geneva, sans-serif;">Я Вячеслав Миро&nbsp;</span></div>
+<div><span style="font-family: Tahoma, Geneva, sans-serif;">&nbsp;</span></div>
+<div><span style="font-family: Tahoma, Geneva, sans-serif; letter-spacing: 0px; line-height: 1.5em; word-spacing: 0.1em;">Меня зовут Вячеслав Миро, я живу в городе Ростов-на-Дону и профессионально занимаюсь свадебной, семейной и портретной фотографией как в Ростове и Москве, так и в любых других городах и странах. </span></div>
+
+<div> </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+            <div  class="col-sm-6 " style=" margin-top: 50px;">
+    <div class="section-title"></div>
+    
+    <div class="divide10"></div>
+
+
+    <div class="services-1">
+	<div class="icon"> <span style="font-family: Tahoma, Geneva, sans-serif;"><i class="glyphicon glyphicon-camera" style="font-size:35px;"></i> </span></div>
+	<div class="text">
+		<h4><span style="font-family: Tahoma, Geneva, sans-serif;">Фотография</span></h4>
+		<p><span style="font-family: Tahoma, Geneva, sans-serif;">Мне бы хотелось поделиться своими чувствами через фотографию, мой взгляд сформирован временем. На своих Мастер Классах я рассказываю как пришел к своему стилю фотографии.</span></p></div>
+	<div class="divide20"><span style="font-family: Tahoma, Geneva, sans-serif;">&nbsp;</span></div>
+	<div class="icon"> <span style="font-family: Tahoma, Geneva, sans-serif;"><i class="glyphicon glyphicon-film" style="font-size:35px;"></i> </span></div>
+	<div class="text">
+		<h4><span style="font-family: Tahoma, Geneva, sans-serif;">Видео</span></h4>
+		<p><span style="font-family: Tahoma, Geneva, sans-serif;">Невероятно, насколько видео может затронуть душу! Частички моей души можно посмотреть в Видео-разделе :)</span></p></div>
+	<div class="divide20"><span style="font-family: Tahoma, Geneva, sans-serif;">&nbsp;</span></div>
+	<div class="icon"> <span style="font-family: Tahoma, Geneva, sans-serif;"><i class="glyphicon glyphicon-wrench" style="font-size:35px;"></i> </span></div>
+	<div class="text">
+		<h4><span style="font-family: Tahoma, Geneva, sans-serif;">Обработка</span></h4>
+		<p><span style="font-family: Tahoma, Geneva, sans-serif;">Так или иначе, обработка стала не отделимой частью фотомира! Я готов поделиться своими знаниями и накопленным опытом с Вами!</span></p></div></div>
+
+</div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax" style="background-image: url(http://1hmzuq4b9qo83iavot2nde7h1d3v.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/parallax.jpg);">
+<!-- Карусель -->
+<div id="myCarousel" class="carousel slide" data-interval="5000" data-ride="carousel">
+  <!-- Индикаторы для карусели -->
+  <ol class="carousel-indicators">
+    <!-- Перейти к 0 слайду карусели с помощью соответствующего индекса data-slide-to="0" -->
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <!-- Перейти к 1 слайду карусели с помощью соответствующего индекса data-slide-to="1" -->
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <!-- Перейти к 2 слайду карусели с помощью соответствующего индекса data-slide-to="2" -->
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>   
+  <div class="carousel-inner" style="height:250px;">
+    <div class="active item">
+    <h2>"Какое это огромное счастье — любить и быть любимым." </h2>
+      <div class="carousel-caption">
+        <h3>Чехов А.П.</h3>
+      </div>
+    </div>
+    <div class="item">
+    <h2>"Любить — это находить в счастье другого своё собственное счастье."</h2>
+      <div class="carousel-caption">
+        <h3>Готфрид Лейбниц</h3>
+      </div>
+    </div>
+    <div class="item">
+    <h2>"Брак истинный только тот, который освещает любовь."</h2>
+      <div class="carousel-caption">
+        <h3>Толстой Л.Н.</h3>
+      </div>
+    </div>
+  </div>
+
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <!-- Кнопка, осуществляющая переход на следующий слайд с помощью атрибута data-slide="next" -->
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+</div>
+
+
+
+
+
+
+<div class="light-wrapper">
+    <div class="container inner"><div class="row"><div class="col-sm-12">
+                <div class="section-title text-center scrollflow -slide-top -opacity"><span class="fixh3">Услуги</span></div>
+            </div>
+            <div class="col-sm-4">                
+	<div class="services-1">                    
+		<div class="icon"> 
+          <i class="glyphicon glyphicon-picture" style="font-size:35px;"></i>
+                    </div>                    
+		<div class="text">                        
+			<h4><span style="font-family: Tahoma, Geneva, sans-serif;"><a href="/" title="Свадебный фотограф">Свадебный фотограф</a></span></h4>
+			<p>Оказываю услуги профессионального свадебного фотографа «Премиум» класса.  Качественно и дорого.</p>                    </div>                    
+		<div class="divide20">&nbsp;</div>                    
+		<div class="icon"> 
+                        <i class="glyphicon glyphicon-facetime-video" style="font-size:35px;"></i>
+                    </div>                    
+		<div class="text">                        
+			<h4><span style="font-family: Tahoma, Geneva, sans-serif;"><a href="/uslugi/55-svadebnyy-videograf.html" target="_blank" title="Свадебный видеограф">Видеограф на свадьбу</a></span>&nbsp;</h4>
+			<p>Качественный и креативный свадебный фильм сохранит воспоминания всего дня вашей свадьбы.</p>                    </div>                </div>            </div>            
+<div class="col-sm-4 ">                
+	<div class="services-1">                    
+		<div class="icon"> 
+                        <i class="glyphicon glyphicon-music" style="font-size:35px;"></i>
+                    </div>                    
+		<div class="text">                        
+			<h4><span style="font-family: Tahoma, Geneva, sans-serif;"><a href="/uslugi/56-veduschiy.html" target="_blank" title="Ведущий на свадьбу">Ведущий мероприятий</a></span>&nbsp;</h4>
+			<p>Проведение корпоративных, бизнес и частных мероприятий. Ведущий лауреат премии ТЭФИ. Интеллигентно,уместно, смешно.</p>                    </div>                    
+		<div class="divide20">&nbsp;</div>                    
+		<div class="icon"> 
+                        <i class="glyphicon glyphicon-glass" style="font-size:35px;"></i>
+                    </div>                    
+		<div class="text">                        
+			<h4><span style="font-family: Tahoma, Geneva, sans-serif;"><a href="/uslugi/54-svadebnyy-dekorator.html" target="_blank" title="Свадебный декоратор">Оформление мероприятий</a></span></h4>
+			<p>Профессиональными декораторы  украсят  торжество, мероприятия и любых важных событий, как частного лица, так и компаний.</p>                    </div>                </div>            </div>            
+<div class="col-sm-4">                
+	<div class="services-1">                    
+		<div class="icon"> 
+                     <i class="glyphicon glyphicon-eye-open" style="font-size:35px;"></i>  
+                    </div>                    
+		<div class="text">                        
+			<h4><span style="font-family: Tahoma, Geneva, sans-serif;"><a href="/uslugi/59-svadebnyy-vizazhist.html" target="_blank" title="Свадебный визажист">Визажист</a></span></h4>
+			<p>Профессиональный дипломированный make up стилист сделает вам макияж на выбор – свадебный, вечерний, smoky eyes и другие</p>                    </div>                    
+		<div class="divide20">&nbsp;</div>                    
+		<div class="icon"> 
+                        <i class="glyphicon glyphicon-plane" style="font-size:35px;"></i>       
+		</div>                    
+		<div class="text">                        
+			<h4><span style="font-family: Tahoma, Geneva, sans-serif;"><a href="/uslugi/62-svadba-za-granicey.html" target="_blank" title="Свадьба за границей">Свадебная фотосессия за границей</a></span></h4>
+			<p>Помощь в организации  свадебной фотосессии в Таиланде, на Мальдивах, Египте или любой другой стране мира. Профессиональное оборудование, индивидуальный подход.</p>                    </div>                </div>            </div>
+        </div></div></div>
+
+		
+		
+
+
+<div class="dark-wrapper nullstyle">
+    <div class="container inner"><div class="row">
+  
+            <div id="aq-block-939-31" class="aq-block aq-block-aq_flickr_block col-sm-12 aq-first ">			
+
+                <div class="swiper-wrapper flickr-wrapper"> 
+
+      
+
+                    <div clеass="swiper-container flickr">
+                        <div cla6ss="swiper flickr-feed"> 
+
+                            <div class="aq-block aq-block-aq_ebor_text_block col-sm-12">
+                                <div class="section-title">
+                                    <h2>Профессиональный свадебный фотограф</h2>
+                                </div>
+                                <p>
+                                    <span class="dropcap">Ф</span>отограф в Москве в наши дни не редкость. С Вашего разрешения, я создам шедевр из свадебных фотографий, 
+                                    которые будут согревать Вас теплом на протяжении долгих лет совместной жизни. Сотни источников массовой информации насыщены тысячами подобных объявлений. Многие имеют в пользовании фотоаппараты, от обыденных «мыльниц» до профессиональных «зеркалок». Однако качественное фото – это лишь вершина айсберга в искусстве с простым названием «фотографирование».
+                                    Жизненный путь каждого человека является единственным и неповторимым.
+                                    У каждого из нас происходят события, о которых вспоминаем снова и снова, 
+                                    заново переживаем, улыбаемся, можем прослезиться. При этом заново насыщаемся эмоциями той 
+                                    обстановки и того момента. Свадьба, пожалуй, является именно таким моментом, 
+                                    о котором помнит каждый человек всю свою жизнь. В свою очередь, фотосъемка свадьбы является 
+                                    наиболее интересным, но вместе с тем, очень трудоемким процессом. 
+                                    Профессиональный свадебный фотограф – это человек, умеющий видеть и вовремя фиксировать красоту, 
+                                    на которую не обращают внимание другие. Фотосъемкой занимаются многие, но лишь единицы из них способны создать шедевр, 
+                                    который навсегда останется в памяти. Именно такому человеку нужно доверить столь важное событие жизни!
+                                    Фотограф на свадьбе должен быть обязательно романтиком, ведь именно от состояния его души зависит воплощение 
+                                    всего происходящего вокруг в фотографии.
+
+                                </p>
+                            </div>   
+
+                            <div class="aq-block aq-block-aq_ebor_text_block col-sm-12">
+                               
+                                <p>
+                                    <span class="dropcap">Ф</span>отограф на свадьбу приезжает за несколько часов до начала торжества. 
+                                    Именно в этот период есть возможность зафиксировать самые трогательные моменты приготовления. 
+                                    Взволнованные родители и подруги невесты, которые помогают одеть свадебное платье, макияж и прическа. 
+                                    Все это происходит лишь один раз в жизни каждой девушки и должно быть запечатлено на долгую память. 
+                                    Для большинства окружающих такие моменты проходят незамеченными в суете, но именно здесь и сейчас свершается судьба, 
+                                    ожидается чудо и видна особая неповторимость невесты. 
+                                    Время в процессе подготовки пролетает мгновенно и… вот машина жениха сигналит под окном, 
+                                    и пульс заметно участился. Волнующийся, но создающий видимость спокойствия жених пытается пройти живую преграду, 
+                                    требующую выкуп…  Такое мероприятие требует профессионального подхода к съемке. 
+                                    Фотограф не имеет права на ошибку и на несколько дублей. Нужно быть в гуще всех событий, 
+                                    успеть запечатлеть каждый трогательный момент и одновременно с этим его не должно быть видно. 
+                                    Весь этот день посвящен только Вам, трогательным взглядам гостей, теплым словам родных и близких, 
+                                    дрожащему голосу и «кому в горле» при произношении заветных слов, первому брачному поцелую… </p>   </div>
+                                    
+                                   <div class="aq-block aq-block-aq_ebor_text_block col-sm-12">
+                                <div class="section-title">
+                                    <h2>Доверьтесь профессионалу</h2>
+                                </div>
+                                <p>
+                                       <span class="dropcap">Я</span> - <strong>профессиональный свадебный фотограф</strong>.
+                                    Многолетний практический опыт работы в данном направлении, научил меня быть сразу в нескольких местах, 
+                                    успеть зафиксировать всё необходимое и переключиться на следующий этап свадьбы. 
+                                    Я гарантирую качественную профессиональную фотосъемку. 
+                                    Каждая свадьба по-своему уникальна и неповторима. От этого зависит и стиль предлагаемой мною фотосъемки. 
+                                    В последнее время большой популярностью пользуется свадьба в Москве в ретро-стиле. 
+                                    Для этого в городе есть все необходимые условия. По Вашему желанию, мы можем отправиться в старинные переулки, 
+                                    парки и скверы. Кузьминки, Царицыно, Коломенское и многие другие места по Вашему выбору. 
+                                    Фотосъемка на природе оставит незабываемые впечатления о дне свадьбы. 
+                                    Коллекция Вашего семейного архива пополнится такими мелочами, к которым так долго присматривались и выбирали: 
+                                    перчатки и кольца, выпускание голубей и свадебный торт, сумочка и свадебный букет. 
+                                    Я передам в фотографиях все эмоции и переживания, которые будут царить в гармоничном беспорядке торжества, 
+                                    создам полноценную историю этого знаменательного для Вас дня.
+
+
+                                </p>
+                           
+
+                       <p>
+                                    <span class="dropcap">И</span>скусство свадебной фотографии является уникальным. 
+                                    Оно кардинально отличается от студийной, где есть возможность выбора ракурса, освещения, 
+                                    сделать необходимое количество подобных снимков, 
+                                    добиваясь оптимального результата и выбирая один снимок из десятка… Свадебный фотограф не имеет права на ошибку, 
+                                    у него нет возможности переснять, подстроить свадебный процесс под себя. 
+                                    Даже в тщательно спланированном процессе есть 
+                                    большая вероятность непредвиденности. И здесь нужно суметь перестроиться. Практически никто не задается вопросом, нужен ли 
+                                    фотограф на свадьбу? Вопрос заключается лишь в том, кому доверить это и не остаться разочарованным результатами. 
+                                    И это очень важно! Некачественное фото, размытые лица, красные зрачки глаз, присутствие посторонних объектов и многое 
+                                    другое. 
+                                    Такой результат Вы получите, прибегнув к услугам новичков и дилетантов. 
+
+                                </p>
+                            </div>  
+
+
+                            <div class="aq-block aq-block-aq_ebor_text_block col-sm-12">
+                                <div class="section-title">
+                                    <h2>Цена вопроса</h2>
+                                </div>
+                                <p>
+                                    <span class="dropcap">П</span>риняв для себя решение воспользоваться услугами фотографа, 
+                                    Вы несомненно зададитесь вопросом :«сколько стоит фотограф»? <strong>Фотограф на свадьбу цену</strong> устанавливает по своему усмотрению. 
+                                    Стоит помнить лишь одно правило – ни один уважающий себя фотограф, 
+                                    специализирующийся на съемке свадебных фотографий, не оценит свой труд дешево! Это кропотливый и трудоемкий труд, 
+                                    требующий постоянной концентрации и внимания. Использование в своей деятельности качественного, 
+                                    а соответственно и дорогостоящего оборудования, также накладывают отпечаток на стоимость данного вида услуг. 
+                                    Сделав свой выбор в пользу минимальной цены, не удивляйтесь соответствующему результату.
+                                    Я ценю свой авторитет, не гонюсь за легким заработком и помню об ответственности перед заказчиком. 
+                                    Гарантирую Вам качественное выполнение работы.
+
+                                </p>
+                            </div>  
+
+                        </div>
+                    </div>
+                </div>
+                <div class="divide40"></div>
+                
+            </div>
+        </div>
+    </div>
+</div>		
+
+</div>
+
+
+
+
+
+{% endblock %}
+

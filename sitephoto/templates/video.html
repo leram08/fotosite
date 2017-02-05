@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+
+
+<div class="head_post"">
+    <div class="container">
+        <div class="row">
+			<div class="col-sm-12">
+                <h2 style="text-align:center;"> Видео блог – это лицо каждого современного фотографа</h2>
+                <br>
+                <p class="p18"> Мой видеоблог был создан для размещения самых актуальных на данный момент времени видеоотчетов с различных мастер-классов, поездок с фотосессиями за границу, а также бэкстейджей со съемочных площадок. </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% load embed_video_tags %}
+<div class="light-wrapper">
+<div class="container" style="max-width:1000px;">
+<ul id="photos_block" class="basic-gallery text-center">
+{% for video in videos %}
+	<li>
+	<div class="embed-responsive embed-responsive-16by9">
+		<iframe class="embed-responsive-item" src="{{ video.video }}" frameborder="0" allowfullscreen></iframe>
+	</div>
+	</li>
+{%endfor%}
+</ul>
+</div>
+</div>
+
+{% endblock %}
+
+

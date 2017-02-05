@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Главная - {% block title%}{% endblock %}</title>
+		
+		{% load staticfiles %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>    
+		<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/accordion.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.lazyload.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/eskju.jquery.scrollflow.js' %}"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/effects.css' %}">
+
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-social.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" /> 
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/1.css' %}">
+
+
+		
+	
+
+	</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="{% static 'images/brand1.png' %}"></a>
+        </div>
+    <div class="navbar-collapse collapse">
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a title="Главная" href="/">Главная</a></li>
+        <li><a title="Портфолио" href="/galery">Портфолио</a></li>
+        <li><a title="Услуги" href="/uslugi">Услуги</a></li>
+        <li><a title="Блог" href="/blog">Блог</a></li>
+        <li><a title="Видео" href="/video">Видео</a></li>
+        <li><a title="Отзывы" href="/comments">Отзывы</a></li>
+        <li><a title="Контакты" href="/contact">Контакты</a></li>
+    </ul>
+  
+    </div>
+	</div>
+</div>
+	{% block content %}{% endblock %}
+
+<div class="footer black-wrapper widget-footer">
+    <div class="container inner">
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="text-3">
+                    <span class="fixh3_2" style="color: #cacaca">О нас</span>
+                    <div class="textwidget" style="color: #cacaca">
+                        <p>Студия фотографии предлагает вам услуги команды фотографов, видеографов ведущих Премиум класса.</p>
+                        <p>Работая с нашей командой, вы сможете переживать эти воспоминания изо дня в день.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <span class="fixh3_2" style="color: #cacaca">КАК НАС НАЙТИ</span>
+                <div class="textwidget" style="color: #cacaca">
+                        <p>По вопросам связанными с услугами фотографа, видеографа свяжитесь с нами одним из способов:</p>
+                </div>
+               
+                <div class="icon" style="color: #cacaca"> 
+                    <i class="glyphicon glyphicon-earphone" style="font-size:20px; margin-right: 10px;"></i>   +7 906 417 90 32 <br> 
+                    <i class="glyphicon glyphicon-envelope" style="font-size:20px; margin-right: 10px;"></i>   2404822@rambler.ru <br> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sub-footer">
+    <div class="container"> 
+        <div class="pull-left">
+             <p style="color: #cacaca">© 2016 BULENKOV.PRO</p>
+        </div>
+        <ul class="social pull-right">
+            <li><a class="btn btn-social-icon btn-sm btn-vk" href="http://vk.com/lerochka017"><span class="fa fa-vk"></span></a></li>
+            <li><a class="btn btn-social-icon btn-sm btn-facebook"><span class="fa fa-facebook"></span></a></li>
+            <li><a class="btn btn-social-icon btn-sm btn-odnoklassniki"><span class="fa fa-odnoklassniki"></span></a></li>
+            <li><a class="btn btn-social-icon btn-sm btn-vimeo"><span class="fa fa-vimeo"></span></a></li>
+        </ul>	    
+    </div>
+</div>		
+</body>
+</html>

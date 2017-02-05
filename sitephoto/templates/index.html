@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<h2>Welcome to the Gallary!</h3>
+
+<table>
+	<tr>
+		{% for album in albums %}
+		{% if album.title_photo%}
+			<td>
+			<h1>{{album.name}}<h1/>
+			<img src="{{album.title_photo.url}}"/>
+
+		{%endif%}		
+			</td>
+		{% endfor %}
+	</tr>
+</table>
+
+{% endblock %}

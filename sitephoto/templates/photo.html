@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+
+
+<div class="head_post">
+<div class="container" style="max-width:1000px;">		
+<div class="row">
+<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+{% if photos.photo_set.all %}
+<h2 style="text-align: center;">{{photos.title}}</h2>
+<p class="p18">{{photos.description}}</p>
+{%endif%}
+<br/>
+
+<ul id="photos_block" class="basic-gallery text-center">
+{% for photo in photos.photo_set.all %}
+	<li>
+	<img src='{{photo.img.url}}' class="star">
+	</li>
+{%endfor%}
+</ul>
+</div>
+</div>
+</div>
+</div>
+  <script type="text/javascript">
+function showImages(el) { 
+var windowHeight = jQuery( window ).height(); 
+$(el).each(function(){ 
+var thisPos = $(this).offset().top; 
+
+var topOfWindow = $(window).scrollTop(); 
+if (topOfWindow + windowHeight - 200 > thisPos ) { 
+$(this).addClass("fadeIn"); 
+} 
+}); 
+} 
+
+$(document).ready(function(){ 
+showImages('.star'); 
+}); 
+
+
+$(window).scroll(function() { 
+showImages('.star'); 
+});
+  </script>
+{% endblock %}
